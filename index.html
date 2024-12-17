@@ -4,61 +4,111 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Google Font for modern look -->
   <style>
-    /* Basic styling */
+    /* Base Styling */
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background: #1f1f1f; /* Dark background for tech look */
+      color: #e0e0e0; /* Light text color */
+      text-align: center;
     }
+    
     header {
-      background-color: #0077cc;
-      color: white;
-      padding: 1em;
+      background-color: #333;
+      color: #fff;
+      padding: 3em 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 0.5em;
+      font-weight: 300;
+    }
+
     img {
       max-width: 200px;
       height: auto;
-      border-radius: 50%; /* Circular image */
+      border-radius: 50%;
       margin: 20px 0;
-      border: 3px solid #0077cc;
+      border: 5px solid #0077cc;
+      transition: transform 0.3s ease;
     }
-    h1, h2 {
-      color: #333;
+
+    img:hover {
+      transform: scale(1.1);
     }
+
+    h2 {
+      font-size: 2em;
+      margin-top: 40px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
     a {
       color: #0077cc;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
+
     a:hover {
+      color: #ff6f61;
       text-decoration: underline;
     }
+
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
+
     ul li {
-      margin: 10px 0;
+      margin: 15px 0;
     }
+
     footer {
       background-color: #333;
-      color: white;
-      padding: 1em;
-      margin-top: 30px;
+      color: #fff;
+      padding: 1.5em 0;
+      font-size: 1.1em;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
     }
+
     footer a {
       color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
+
+    footer a:hover {
+      color: #0077cc;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Showcasing my projects and skills</p>
+    <div class="container">
+      <h1>Welcome to My Tech Portfolio</h1>
+      <p>Explore my projects, skills, and experience</p>
+    </div>
   </header>
 
   <!-- Profile Image -->
@@ -66,7 +116,7 @@
 
   <!-- About Section -->
   <h2>About Me</h2>
-  <p>This is my portfolio showcasing my projects in data science, web development, and more. Below, you'll find links to my projects where I dive into various topics and technologies.</p>
+  <p>I'm a passionate software engineer with a focus on data science and full-stack web development. My work revolves around building data-driven solutions and scalable web applications.</p>
 
   <!-- Projects Section -->
   <h2>My Projects</h2>
@@ -78,8 +128,10 @@
 
   <!-- Footer Section -->
   <footer>
-    <p>© 2024 My Portfolio. All Rights Reserved.</p>
-    <p><a href="https://github.com/badnickton">Visit My GitHub Profile</a></p>
+    <div class="container">
+      <p>© 2024 My Tech Portfolio. All Rights Reserved.</p>
+      <p><a href="https://github.com/badnickton">GitHub Profile</a></p>
+    </div>
   </footer>
 </body>
 </html>
