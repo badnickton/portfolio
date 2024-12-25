@@ -3,106 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1 - Example Project</title>
+  <title>Heart Attack Predictive Modeling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Simple CSS for styling */
+    /* Base Styling */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      color: #e0e0e0; /* Light text color for contrast */
-      background: url('../images/background%20image.avif') no-repeat center center fixed;
-      background-size: cover; /* Ensure background image covers entire screen */
-      height: 100vh; /* Full viewport height */
+      background: url('background image copy.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      text-align: center;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for header */
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 3em 0;
       color: #fff;
-      text-align: center;
-      padding: 1em 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .container {
-      width: 80%;
-      margin: auto;
-      padding: 2em;
-      background-color: rgba(0, 0, 0, 0.5); /* Transparent background for content */
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      letter-spacing: 2px;
     }
 
-    h1, h2 {
-      color: #0077cc; /* Accent color for headers */
+    header p {
+      font-size: 1.5em;
+      margin-top: 0.5em;
+      font-weight: 300;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      margin: 1em 0;
-      border-radius: 8px; /* Rounded corners for images */
+    h2 {
+      font-size: 2em;
+      margin-top: 40px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 15px;
     }
 
     a {
       color: #0077cc;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     a:hover {
+      color: #ff6f61;
       text-decoration: underline;
     }
 
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      margin: 15px 0;
+      text-align: left;
+      padding-left: 15px;
+    }
+
     footer {
-      text-align: center;
-      margin-top: 2em;
-      padding: 1em 0;
-      background-color: #222;
-      color: #777;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 1.5em 0;
+      font-size: 1.1em;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    footer a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #0077cc;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .text-content {
+      width: 65%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .project-details {
+      display: flex; /* Align image and text horizontally */
+      align-items: flex-start; /* Align items at the top */
+      gap: 20px; /* Reduced space between image and text */
+      padding-left: 15px; /* Align with text */
+    }
+
+    .project-image {
+      max-width: 380px; /* Small image size */
+      height: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>Project 1: Example Project</h1>
-    <p>A brief description of the project</p>
+    <div class="container">
+      <h1>Heart Attack Predictive Modeling</h1>
+      <p>Data Analysis and Predictive Modeling Using R</p>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <h2>About the Project</h2>
-    <p>
-      This is a detailed description of the project. Explain what the project is about, its purpose, and the problem it solves. Add any relevant technical details or tools used.
-    </p>
+  <!-- About the Project -->
+  <h2>About This Project</h2>
+  <div class="text-content">
+    <p>This project involves using predictive modeling to analyze medical data and predict the likelihood of a heart attack based on various patient features. I used logistic regression, a popular technique in machine learning, and the <code>caret</code> package in R to build the model.</p>
+  </div>
 
-    <h2>Technologies Used</h2>
+  <!-- Project Details Section -->
+  <h2>Project Details</h2>
+  <img src="heart-attack copy.jpg" alt="Heart Attack Image" class="project-image">
+  <div class="text-content">
+    <h3>Dataset Description</h3>
+    <p>The dataset was downloaded from Kaggle, and includes several medical attributes such as:</p>
     <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript</li>
+      <li><strong>age</strong>: Age of the patient</li>
+      <li><strong>sex</strong>: Sex of the patient (1 = male, 0 = female)</li>
+      <li><strong>cp</strong>: Chest pain type (1 to 4)</li>
+      <li><strong>trtbps</strong>: Resting blood pressure (in mm Hg)</li>
+      <li><strong>chol</strong>: Cholesterol in mg/dl</li>
+      <li><strong>fbs</strong>: Fasting blood sugar > 120 mg/dl (1 = true, 0 = false)</li>
+      <li><strong>restecg</strong>: Resting electrocardiographic results</li>
+      <li><strong>exng</strong>: Exercise-induced angina (1 = yes, 0 = no)</li>
+      <li><strong>output</strong>: 0 = no heart attack, 1 = heart attack (target variable)</li>
     </ul>
 
-    <h2>Project Screenshots</h2>
-    <p>Below are some screenshots showcasing the project:</p>
-    <img src="screenshot1.png" alt="Project Screenshot 1">
-    <img src="screenshot2.png" alt="Project Screenshot 2">
+    <h3>Data Preprocessing</h3>
+    <p>After loading the data, I checked for missing values, variable types, and outliers. I also converted categorical variables like <code>sex</code>, <code>cp</code>, <code>restecg</code>, <code>exng</code>, <code>caa</code>, and <code>output</code> to factors in R.</p>
+    
+    <pre><code>
+    # Load data and check structure
+    heart_data <- read.csv("heart.csv")
+    str(heart_data)  # Check the structure of the dataset
+    summary(heart_data)  # Summary statistics
 
-    <h2>Links</h2>
+    # Convert categorical variables to factors
+    heart_data$sex <- factor(heart_data$sex)
+    heart_data$cp <- factor(heart_data$cp)
+    heart_data$restecg <- factor(heart_data$restecg)
+    heart_data$exng <- factor(heart_data$exng)
+    heart_data$caa <- factor(heart_data$caa)
+    heart_data$output <- factor(heart_data$output)
+    </code></pre>
+
+    <h3>Inferential Modeling</h3>
+    <p>The logistic regression model was built using the <code>glm()</code> function in R. The model predicted the probability of a heart attack (output = 1) based on variables such as age, sex, cholesterol, etc.</p>
+
+    <pre><code>
+    # Build the logistic regression model
+    model <- glm(output ~ age + sex + cp + trtbps + chol + fbs + restecg + thalachh + exng + caa, 
+                 data = heart_data, family = "binomial")
+    summary(model)  # Model summary
+    </code></pre>
+
+    <h3>Model Summary</h3>
+    <p>The logistic regression model coefficients are as follows:</p>
+    <pre><code>
+    Call:
+    glm(formula = output ~ ., family = "binomial", data = heart_data)
+
+    Coefficients:
+                  Estimate Std. Error z value Pr(>|z|)
+    (Intercept)   3.247491   2.577337   1.260 0.207663
+    age          -0.003799   0.023305  -0.163 0.870523
+    sex1         -1.766108   0.477391  -3.700 0.000216 ***
+    cp1           1.192502   0.543991   2.192 0.028370 *
+    cp2           2.037263   0.464480   4.386 1.15e-05 ***
+    cp3           2.151925   0.632931   3.400 0.000674 ***
+    trtbps       -0.017800   0.010429  -1.707 0.087875 .
+    chol         -0.004911   0.003854  -1.274 0.202631
+    fbs1          -0.011093   0.538312  -0.021 0.983559
+    restecg1      0.497028   0.362733   1.370 0.170614
+    restecg2     -0.339493   2.226610  -0.152 0.878816
+    thalachh      0.022030   0.010506   2.097 0.036012 *
+    exng1         -0.902581   0.394351  -2.289 0.030065 *
+    oldpeak      -0.495638   0.221238  -2.240 0.024438 *
+    caa1          0.234472   0.420065   0.558 0.577809
+    caa2         -0.789806   0.331673  -2.379 0.017369 *
+    caa3         -0.292457   0.512498  -0.571 0.568674
+    thall       -0.887500   0.309051  -2.870 0.002364 **
+    </code></pre>
+
+    <h3>Histogram of Predicted Probabilities</h3>
+    <img src="Screenshot 2024-12-24 210054.jpg" alt="Heart Attack Image" class="project-image">
+    <p>Above shows a histogram of the people and their predicted heart attack outcome between 0 (0%) to 1 (100%).</p>
+
+    <h3>Model Evaluation</h3>
+    <p>To evaluate the model, I used a 10-fold cross-validation approach and obtained the following results:</p>
     <ul>
-      <li><a href="https://github.com/yourusername/yourproject">GitHub Repository</a></li>
-      <li><a href="https://live-demo-link.com">Live Demo</a></li>
+      <li><strong>Accuracy:</strong> 85.48%</li>
+      <li><strong>Sensitivity (Recall):</strong> 78.26%</li>
+      <li><strong>Specificity:</strong> 91.52%</li>
+      <li><strong>Precision:</strong> 88.52%</li>
+      <li><strong>Negative Predictive Value:</strong> 83.43%</li>
     </ul>
+
+    <h3>Confusion Matrix</h3>
+    <p>The confusion matrix for the logistic regression model is as follows:</p>
+    <table border="1">
+      <tr>
+        <th>Predicted/Actual</th>
+        <th>0</th>
+        <th>1</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>108</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>30</td>
+        <td>151</td>
+      </tr>
+    </table>
+    <p>Based on the confusion matrix, the model has high specificity and moderate sensitivity, making it good at detecting non-heart attack cases but not as good at detecting actual heart attack cases.</p>
+
+    <h3>Naive Model Comparison</h3>
+    <p>The naive model, which simply predicts the most common outcome (no heart attack), achieved an accuracy of 54.45%. This is significantly lower than the logistic regression model (around 85%), demonstrating the power of logistic regression in identifying risk factors for heart attacks.</p>
+    <img src="Screenshot 2024-12-24 211342.jpg" alt="Heart Attack Image" class="project-image">
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>
-      <a href="../index.html">Back to Portfolio</a>
-    </p>
-    <p>&copy; 2024 Your Name</p>
+    <div class="container">
+      <p>&copy; 2024 Heart Attack Predictive Modeling. All Rights Reserved.</p>
+      <p>For more information, visit <a href="#">Our Website</a></p>
+    </div>
   </footer>
 </body>
 </html>
