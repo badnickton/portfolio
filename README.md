@@ -4,7 +4,7 @@ Welcome to my data science and project portfolio! This repository contains multi
 
 ## About Me
 
-Hi, I'm [Your Name](https://github.com/badnickton). I'm passionate about data science, web development, and problem-solving. In this portfolio, I’ve compiled some of my best work that demonstrates my ability to build scalable applications, analyze datasets, and create impactful solutions.
+Hi, I'm [Nicholas (Nick)](https://github.com/badnickton). I'm passionate about data science, web development, and problem-solving. In this portfolio, I’ve compiled some of my best work that demonstrates my ability to build scalable applications, analyze datasets, and create impactful solutions.
 
 ## Projects
 
