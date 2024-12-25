@@ -10,7 +10,7 @@ Hi, I'm [Your Name](https://github.com/badnickton). I'm passionate about data sc
 
 Here are links to the individual projects hosted on GitHub Pages:
 
-- **[Project 1: Healthcare Analytics (R): Heart Attack Predictive Modeling](https://badnickton.github.io/portfolio/project1/)**  
+- **[Healthcare Analytics (R): Heart Attack Predictive Modeling](https://badnickton.github.io/portfolio/project1/)**  
   Description of Project 1: This project focuses on data analysis using Python, where I used machine learning algorithms to predict X based on Y.
 
 - **[Project 2: Example Project](https://badnickton.github.io/portfolio/project2/)**  
