@@ -16,7 +16,7 @@
       color: #e0e0e0; /* Light text color */
       text-align: center;
     }
-    
+
     header {
       background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
       padding: 3em 0;
@@ -97,8 +97,13 @@
     }
 
     .container {
-      width: 80%;
-      margin: 0 auto;
+      width: 80%; /* Set the width to 80% of the screen */
+      margin: 0 auto; /* Center the container horizontally */
+      max-width: 1000px; /* Ensure it doesn’t get too wide on large screens */
+      background-color: rgba(0, 0, 0, 0.7); /* Add background for readability */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -114,39 +119,42 @@
   <!-- Profile Image -->
   <img src="images/Professional-Picture.png" alt="Profile Picture">
 
-  <!-- About Section -->
-  <h2>About Me</h2>
-  <p>Hi, I'm Nicholas (Nick). I'm passionate about data science, business, and the connections that we could make between the two. In this portfolio, I’ve compiled some of my best work that demonstrates my ability to build scalable applications, analyze datasets, and create impactful solutions.</p>
+  <!-- Main Content -->
+  <div class="container">
+    <!-- About Section -->
+    <h2>About Me</h2>
+    <p>Hi, I'm Nicholas (Nick). I'm passionate about data science, web development, and problem-solving. In this portfolio, I’ve compiled some of my best work that demonstrates my ability to build scalable applications, analyze datasets, and create impactful solutions.</p>
 
-  <!-- Projects Section -->
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <a href="healthcare-analytics/index.html">Healthcare Analytics (R): Heart Attack Predictive Modeling</a>
-      <p>This project focuses on predictive modeling in R, where I built logistic regression models to analyze heart attack risks based on patient data.</p>
-    </li>
-    <li>
-      <a href="project2/index.html">Project 2: Example Project</a>
-      <p>A web development project built with React.js and Node.js, showcasing how to build a full-stack web application with real-time features.</p>
-    </li>
-    <li>
-      <a href="project3/index.html">Project 3: Example Project</a>
-      <p>A data visualization project using D3.js to represent complex datasets interactively.</p>
-    </li>
-  </ul>
+    <!-- Projects Section -->
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <a href="healthcare-analytics/index.html">Healthcare Analytics (R): Heart Attack Predictive Modeling</a>
+        <p>This project focuses on predictive modeling in R, where I built logistic regression models to analyze heart attack risks based on patient data.</p>
+      </li>
+      <li>
+        <a href="project2/index.html">Project 2: Example Project</a>
+        <p>A web development project built with React.js and Node.js, showcasing how to build a full-stack web application with real-time features.</p>
+      </li>
+      <li>
+        <a href="project3/index.html">Project 3: Example Project</a>
+        <p>A data visualization project using D3.js to represent complex datasets interactively.</p>
+      </li>
+    </ul>
 
-  <!-- Technologies Used -->
-  <h2>Technologies Used</h2>
-  <ul>
-    <li><strong>Languages:</strong> Python, JavaScript, HTML/CSS</li>
-    <li><strong>Frameworks/Tools:</strong> React.js, Node.js, D3.js, Flask, Django, Pandas, Scikit-learn</li>
-    <li><strong>Other:</strong> GitHub Pages, Heroku, AWS</li>
-  </ul>
+    <!-- Technologies Used -->
+    <h2>Technologies Used</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, JavaScript, HTML/CSS</li>
+      <li><strong>Frameworks/Tools:</strong> React.js, Node.js, D3.js, Flask, Django, Pandas, Scikit-learn</li>
+      <li><strong>Other:</strong> GitHub Pages, Heroku, AWS</li>
+    </ul>
 
-  <!-- Contact Section -->
-  <h2>Contact</h2>
-  <p>You can reach me via email at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-  <p>Or check out my full profile on GitHub: <a href="https://github.com/badnickton">badnickton</a></p>
+    <!-- Contact Section -->
+    <h2>Contact</h2>
+    <p>You can reach me via email at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p>Or check out my full profile on GitHub: <a href="https://github.com/badnickton">badnickton</a></p>
+  </div>
 
   <!-- Footer Section -->
   <footer>
