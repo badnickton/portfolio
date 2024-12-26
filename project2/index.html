@@ -3,106 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2 - Example Project</title>
+  <title>Airbnb Database Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Simple CSS for styling */
+    /* Base Styling */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      color: #e0e0e0; /* Light text color for contrast */
-      background: url('../images/background%20image.avif') no-repeat center center fixed;
-      background-size: cover; /* Ensure background image covers entire screen */
-      height: 100vh; /* Full viewport height */
+      background: url('background image copy.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      text-align: center;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for header */
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 3em 0;
       color: #fff;
-      text-align: center;
-      padding: 1em 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .container {
-      width: 80%;
-      margin: auto;
-      padding: 2em;
-      background-color: rgba(0, 0, 0, 0.5); /* Transparent background for content */
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      letter-spacing: 2px;
     }
 
-    h1, h2 {
-      color: #0077cc; /* Accent color for headers */
+    header p {
+      font-size: 1.5em;
+      margin-top: 0.5em;
+      font-weight: 300;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      margin: 1em 0;
-      border-radius: 8px; /* Rounded corners for images */
+    h2, h3 {
+      font-size: 2em;
+      margin-top: 40px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 15px;
     }
 
     a {
       color: #0077cc;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     a:hover {
+      color: #ff6f61;
       text-decoration: underline;
     }
 
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      margin: 15px 0;
+      text-align: left;
+      padding-left: 15px;
+    }
+
     footer {
-      text-align: center;
-      margin-top: 2em;
-      padding: 1em 0;
-      background-color: #222;
-      color: #777;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 1.5em 0;
+      font-size: 1.1em;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    footer a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #0077cc;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .text-content {
+      width: 65%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .project-details {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding-left: 15px;
+    }
+
+    .project-image {
+      max-width: 480px;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .code-block {
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Styled Button */
+    .back-home-btn button {
+      background-color: #1c1c1c; /* Dark background */
+      color: #e0e0e0; /* Light text */
+      border: 2px solid #e0e0e0; /* Light border */
+      border-radius: 8px; /* Rounded edges */
+      padding: 10px 20px; /* Padding for size */
+      font-family: 'Poppins', sans-serif; /* Font */
+      font-size: 1em; /* Readable size */
+      cursor: pointer; /* Pointer cursor */
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    }
+
+    .back-home-btn button:hover {
+      background-color: #e0e0e0; /* Light background */
+      color: #1c1c1c; /* Dark text */
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>Project 1: Example Project</h1>
-    <p>A brief description of the project</p>
+    <div class="container">
+      <h1>Airbnb Database Project</h1>
+      <p>Database Creation and Management</p>
+    </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- About the Project -->
+  <section>
+    <h2>About This Project</h2>
+    <div class="text-content">
+      <p>This project focuses on creating a scalable and robust database for Airbnb, a global marketplace for lodging and travel experiences. Our system supports essential functionalities, such as managing properties, renters, bookings, payments, and reviews while ensuring privacy and reliability.</p>
+    </div>
+    <img src="airbnb.png" alt="Airbnb logo" class="project-image" style="width: 300px; height: auto;">
+  </section>
+
+  <!-- Steps Section -->
+  <section>
+    <h2>Project Steps</h2>
+    <div class="text-content">
+      <h3>Step 1: Initial Planning</h3>
+      <p>The first step was to identify the key entities and relationships needed to model the database. The main entities included:</p>
+      <ul>
+        <li><strong>Renter/Guest:</strong> Individual who books properties through Airbnb for short-term stays.</li>
+        <li><strong>Property:</strong> Details about rental properties available for booking.</li>
+        <li><strong>Booking:</strong> Records details about reservations, including dates, guests, and payment status.</li>
+        <li><strong>Review:</strong> Feedback from hosts and guests regarding stays and interactions.</li>
+        <li><strong>Payment:</strong> Handles payment transactions, including booking charges and refunds.</li>
+        <li><strong>Message:</strong> Manages communication between hosts and guests within the platform.</li>
+        <li><strong>Landlord:</strong> Owns/manages the property being rented out.</li>
+      </ul>
+      <p>We mapped out the necessary attributes for each entity and defined how they would relate to each other.</p>
+
+      <h3>Step 2: Database Design</h3>
+      <p>In the second step, we created an Entity-Relationship (ER) diagram, which visually depicted the relationships between all the identified entities. This diagram helped us understand the structure of the database, ensuring that relationships like "a property belongs to a landlord" and "a booking is linked to a property" were represented correctly. This design also facilitated the avoidance of data redundancy.</p>
+      <img src="Screenshot 2024-12-26 010340.jpg" alt="ER Diagram" class="project-image">
+      <h3>Step 3: Data Type Selection</h3>
+      <p>After designing the database structure, we carefully selected the appropriate data types for each attribute. For example, we used <code>DECIMAL</code> for amounts (like payments), <code>TEXT</code> for reviews, and <code>DATE</code> for dates related to bookings and reviews. This ensured data was stored efficiently and accurately.</p>
+
+      <h3>Step 4: Creating the Database</h3>
+      <p>With the design and data types in place, we proceeded to create the tables in SQL. This step involved writing SQL statements to define each table, its columns, and the relationships between them. Foreign keys were implemented to link entities, ensuring that related data was consistent. After creating the tables, we populated the tables by generating mock data from Mockaroo data generator.<br><br> Below is an example of one of these tables.</p>
+      <img src="Screenshot 2024-12-26 010650.jpg" alt="SQL Table" class="project-image">
+      <h3>Step 5: Query Development</h3>
+      <p>Once the tables were created, we wrote SQL queries to interact with the database. These queries were designed to retrieve relevant information, such as booking details, landlord information, or reviews. The queries were also used to insert, update, and delete data as necessary.</p>
+
+      <h4>Example Query</h4>
+      <div class="code-block">
+        <code>
+CREATE OR ALTER PROCEDURE GetTopLandlordsByRent
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT TOP 5 
+        L.LandlordID,
+        L.Name AS LandlordName,
+        SUM(B.AmountPaid) AS TotalRentCollected
+    FROM 
+        Landlord L
+    JOIN 
+        Property P ON L.LandlordID = P.LandlordID
+    JOIN 
+        Booking B ON P.PropertyID = B.PropertyID
+    GROUP BY 
+        L.LandlordID, L.Name
+    ORDER BY 
+        TotalRentCollected DESC;
+END;
+        </code>
+      </div>
+      <p>This query identifies the top 5 landlords based on total rent collected, helping property managers recognize significant contributors and forecast revenue.</p>
+
+      <h3>Step 6: Finalizing the Application</h3>
+      <p>We finalized everything by ensuring that no data was missing, all the queries made sense, and that everything was realistic for a presentation as a data scientist at Airbnb.</p>
+    </div>
+  </section>
   <div class="container">
-    <h2>About Project 2</h2>
-    <p>
-      This is a detailed description of the project. Explain what the project is about, its purpose, and the problem it solves. Add any relevant technical details or tools used.
-    </p>
-
-    <h2>Technologies Used</h2>
-    <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript</li>
-    </ul>
-
-    <h2>Project Screenshots</h2>
-    <p>Below are some screenshots showcasing the project:</p>
-    <img src="screenshot1.png" alt="Project Screenshot 1">
-    <img src="screenshot2.png" alt="Project Screenshot 2">
-
-    <h2>Links</h2>
-    <ul>
-      <li><a href="https://github.com/yourusername/yourproject">GitHub Repository</a></li>
-      <li><a href="https://live-demo-link.com">Live Demo</a></li>
-    </ul>
+    <a href="../index.html" class="back-home-btn">
+      <button>Back to Homepage</button>
+    </a>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>
-      <a href="../index.html">Back to Portfolio</a>
-    </p>
-    <p>&copy; 2024 Your Name</p>
+    <div class="container">
+      <p>&copy; 2024 Airbnb Database Project. All Rights Reserved.</p>
+    </div>
   </footer>
 </body>
 </html>

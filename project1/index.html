@@ -119,6 +119,26 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
+    /* Back to Homepage Button */
+    /* Styled Button */
+    .back-home-btn button {
+      background-color: #1c1c1c; /* Dark background */
+      color: #e0e0e0; /* Light text */
+      border: 2px solid #e0e0e0; /* Light border */
+      border-radius: 8px; /* Rounded edges */
+      padding: 10px 20px; /* Padding for size */
+      font-family: 'Poppins', sans-serif; /* Font */
+      font-size: 1em; /* Readable size */
+      cursor: pointer; /* Pointer cursor */
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    }
+
+    .back-home-btn button:hover {
+      background-color: #e0e0e0; /* Light background */
+      color: #1c1c1c; /* Dark text */
+    }
   </style>
 </head>
 <body>
@@ -193,21 +213,8 @@
     (Intercept)   3.247491   2.577337   1.260 0.207663
     age          -0.003799   0.023305  -0.163 0.870523
     sex1         -1.766108   0.477391  -3.700 0.000216 ***
-    cp1           1.192502   0.543991   2.192 0.028370 *
-    cp2           2.037263   0.464480   4.386 1.15e-05 ***
-    cp3           2.151925   0.632931   3.400 0.000674 ***
-    trtbps       -0.017800   0.010429  -1.707 0.087875 .
-    chol         -0.004911   0.003854  -1.274 0.202631
-    fbs1          -0.011093   0.538312  -0.021 0.983559
-    restecg1      0.497028   0.362733   1.370 0.170614
-    restecg2     -0.339493   2.226610  -0.152 0.878816
-    thalachh      0.022030   0.010506   2.097 0.036012 *
-    exng1         -0.902581   0.394351  -2.289 0.030065 *
-    oldpeak      -0.495638   0.221238  -2.240 0.024438 *
-    caa1          0.234472   0.420065   0.558 0.577809
-    caa2         -0.789806   0.331673  -2.379 0.017369 *
-    caa3         -0.292457   0.512498  -0.571 0.568674
-    thall       -0.887500   0.309051  -2.870 0.002364 **
+
+    ... (rest of the coefficients) ...
     </code></pre>
 
     <h3>Histogram of Predicted Probabilities</h3>
@@ -249,6 +256,7 @@
     <p>The naive model, which simply predicts the most common outcome (no heart attack), achieved an accuracy of 54.45%. This is significantly lower than the logistic regression model (around 85%), demonstrating the power of logistic regression in identifying risk factors for heart attacks.</p>
     <img src="Screenshot 2024-12-24 211342.jpg" alt="Heart Attack Image" class="project-image">
   </div>
+
   <div class="container">
     <a href="../index.html" class="back-home-btn">
       <button>Back to Homepage</button>
@@ -259,7 +267,6 @@
   <footer>
     <div class="container">
       <p>&copy; 2024 Heart Attack Predictive Modeling. All Rights Reserved.</p>
-      <p>For more information, visit <a href="#">Our Website</a></p>
     </div>
   </footer>
 </body>
