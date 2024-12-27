@@ -3,311 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Tableau Data Visualization</title>
   <style>
-    /* Base Styling */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: url('images/background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #e0e0e0;
+      background: #f4f4f4;
+      color: #333;
       text-align: center;
     }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 3em 0;
-      color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    h1 {
+      font-size: 2.5em;
+      margin-top: 30px;
+      color: #333;
     }
 
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 1.5em;
-      margin-top: 0.5em;
-      font-weight: 300;
-    }
-
-    .profile-image {
-      max-width: 200px;
-      height: auto;
-      border-radius: 50%;
-      margin: 20px 0;
-      border: 5px solid #0077cc;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-image:hover {
-      transform: scale(1.5);
-    }
-
-    h2 {
-      font-size: 2em;
-      margin-top: 40px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-size: 1.5em;
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
       margin-top: 20px;
-      font-weight: bold;
-      text-align: left;
-      padding-left: 15px;
-    }
-
-    a {
-      color: #0077cc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff6f61;
-      text-decoration: underline;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul li {
-      margin: 15px 0;
-      text-align: left;
-      padding-left: 15px;
-    }
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      padding: 1.5em 0;
-      font-size: 1.1em;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    footer a {
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: #0077cc;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .text-content {
-      width: 65%;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    /* Grid layout for the projects container */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 15px;
-    }
-
-    .project-wrapper {
-      width: 100%;
-      text-align: left;
-    }
-
-    .project-details {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      padding-left: 15px;
-    }
-
-    .project-image {
-      max-width: 180px;
-      height: auto;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-      header h1 {
-        font-size: 2.5em;
-      }
-
-      header p {
-        font-size: 1.2em;
-      }
-
-      h2 {
-        font-size: 1.8em;
-      }
-
-      .projects-container {
-        gap: 20px;
-      }
-
-      .project-details {
-        gap: 15px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .projects-container {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-        gap: 30px;
-      }
-
-      .project-details {
-        flex-direction: column; /* Stack image and text */
-        text-align: center; /* Center-align content */
-        padding-left: 0;
-      }
-
-      .project-image {
-        margin: 0 auto; /* Center image */
-      }
-
-      .text-content {
-        width: 90%;
-        font-size: 1em;
-      }
-
-      h3 {
-        text-align: center; /* Center project title */
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      header p {
-        font-size: 1em;
-      }
-
-      .profile-image {
-        max-width: 150px; /* Reduce profile image size */
-      }
-
-      h2 {
-        font-size: 1.5em;
-      }
-
-      h3 {
-        font-size: 1.2em;
-      }
-
-      .text-content {
-        font-size: 0.9em;
-      }
-
-      footer {
-        font-size: 0.9em;
-        line-height: 1.5em; /* Add more spacing for better readability */
-      }
-
-      footer p {
-        margin: 0.5em 0;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Nicholas Chiu Data Portfolio</h1>
-      <p>Explore my projects, skills, and experience</p>
-    </div>
-  </header>
+  <h1>Tableau Data Visualization - Hospital Analysis</h1>
 
-  <!-- Profile Image -->
-  <img src="images/Professional-Picture.png" alt="Profile Picture" class="profile-image">
+  <!-- Embed Tableau Dashboard -->
+  <iframe src="https://public.tableau.com/app/profile/nicholas.chiu/viz/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals#1" title="Tableau Dashboard"></iframe>
 
-  <!-- About Section -->
-  <h2>About Me</h2>
-  <div class="text-content">
-    <p>Hi, I'm Nicholas (Nick) Chiu. I'm passionate about data science, business, and finding connections between the two. I am currently a Data Science and Economics student at the University of Washington in Seattle. In this portfolio, I’ve compiled some of my best work that demonstrates my ability to solve problems with data!</p>
-    <h4>Here is my <a href="https://docs.google.com/document/d/1MBVJiKuTIKTcKQtWAkSpewG7rzYx4XoF/edit">Resume</a>.</h4>
-  </div>
-
-  <!-- Projects Section -->
-  <h2>My Projects</h2>
-  <div class="projects-container">
-    <div class="project-wrapper">
-      <h3>Healthcare Analytics (R): Heart Attack Predictive Modeling</h3>
-      <div class="project-details">
-        <img src="images/heart-attack.jpg" alt="Heart Attack Predictive Modeling" class="project-image">
-        <div class="text-content">
-          <p>This project focuses on data analysis using R, where I used logistic regression and machine learning techniques to predict the likelihood of a heart attack based on various patient features.</p>
-          <p><a href="project1/index.html">View Project Details</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-wrapper">
-      <h3>Database Design & Analysis (SQL): AirBnB Database Implementation</h3>
-      <div class="project-details">
-        <img src="images/airbnb.png" alt="AirBnB logo" class="project-image">
-        <div class="text-content">
-          <p>This project involved creating ER diagrams, implementing an SQL database for a company like AirBnB, populating it with generated data, and performing analysis to extract insights on customer trends and booking patterns.</p>
-          <p><a href="project2/index.html">View Project Details</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-wrapper">
-      <h3>Financial Data Analytics (Python):<br> US Stock Market Insights</h3>
-      <div class="project-details">
-        <img src="images/stock.png" alt="NYSE logo" class="project-image">
-        <div class="text-content">
-          <p>This project explores trends in US tech stocks over two decades, using data from the Alpha Vantage API to analyze price movements, sector performance, and the impact of global events.</p>
-          <p><a href="project3/index.html">View Project Details</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-wrapper">
-      <h3>Marketing Analytics (Tableau):<br> E-Commerce Data Dashboard</h3>
-      <div class="project-details">
-        <img src="images/marketing.avif" alt="marketing logo" class="project-image">
-        <div class="text-content">
-          <p>This project analyzes a clothing company's e-commerce sales trends through a real-time Tableau dashboard with bar charts, tree maps, scatter plots, and geographic maps showcasing regional product sales.</p>
-          <p><a href="project4/index.html">View Project Details</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer Section -->
-  <footer>
-    <div class="container">
-      <p>© 2024 My Tech Portfolio. All Rights Reserved.</p>
-      <p>Built with dedication by Nicholas Chiu.</p>
-      <p><a href="https://github.com/badnickton">GitHub Profile</a></p>
-    </div>
-  </footer>
 </body>
 </html>

@@ -1,1 +1,73 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.S. DRG Analysis - Nicholas Chiu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 1.5rem 0;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+        }
+        main {
+            padding: 2rem;
+        }
+        .tableau-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>U.S. DRG Analysis</h1>
+        <p class="text-center">By Nicholas Chiu</p>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h2 class="text-center">Overview</h2>
+                <p>This visualization explores Diagnosis-Related Group (DRG) hospitalizations across the United States. Analyze regional and hospital-level data using the interactive Tableau dashboard below.</p>
+            </section>
+            <div class="tableau-container">
+                <div class="tableauPlaceholder" style="width: 100%; height: 700px;">
+                    <noscript>
+                        <a href="https://public.tableau.com/app/profile/nicholas.chiu/viz/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals#1">
+                            View the visualization on Tableau Public.
+                        </a>
+                    </noscript>
+                    <object class="tableauViz" style="display: none;" 
+                            width="100%" 
+                            height="700" 
+                            data-src="https://public.tableau.com/views/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals?%3Aembed=true&%3AshowVizHome=no">
+                    </object>
+                </div>
+                <script type="text/javascript" 
+                        src="https://public.tableau.com/javascripts/api/tableau-2.min.js">
+                </script>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nicholas Chiu. All rights reserved.</p>
+    </footer>
+</body>
+</html>

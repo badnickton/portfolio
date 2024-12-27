@@ -51,28 +51,29 @@
       padding-left: 15px;
     }
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff6f61;
-      text-decoration: underline;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul li {
-      margin: 15px 0;
+    .text-content {
+      width: 65%;
+      margin: 0 auto;
       text-align: left;
-      padding-left: 15px;
+    }
+
+    .code-block {
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 20px;
+    }
+
+    .project-image {
+      max-width: 480px;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     footer {
@@ -80,7 +81,7 @@
       color: #fff;
       padding: 1.5em 0;
       font-size: 1.1em;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+      text-align: center;
     }
 
     footer a {
@@ -92,44 +93,6 @@
     footer a:hover {
       color: #0077cc;
     }
-
-    .container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .text-content {
-      width: 65%;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .project-details {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      padding-left: 15px;
-    }
-
-    .project-image {
-      max-width: 480px;
-      height: auto;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .code-block {
-      background-color: #2e2e2e;
-      color: #e0e0e0;
-      padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
     /* Styled Button */
     .back-home-btn button {
       background-color: #1c1c1c; /* Dark background */
@@ -155,55 +118,197 @@
   <header>
     <div class="container">
       <h1>US Technology Stock Analysis</h1>
-      <p>Exploring trends and factors influencing stock prices in the tech sector</p>
+      <p>Data Analysis and Machine Learning with Python</p>
     </div>
   </header>
 
   <!-- About the Project -->
   <section>
-    <h2>About This Project (in progress)</h2>
+    <h2>Executive Summary</h2>
     <div class="text-content">
-      <p>This project investigates trends in the US technology stock market over the past two decades. Using data from the Alpha Vantage API, we explore patterns among major tech companies, sector performance, and factors influencing stock prices.</p>
+      <p>This project analyzes trends in the US technology stock market over the past two decades, focusing on market trends, sub-sector performance, and the influence of financial indicators. Using data from the Alpha Vantage API, we explored stock prices, trading volumes, and financial reports, applying machine learning techniques like Ridge and Linear Regression to identify key factors impacting stock prices. Through Ridge Regression, we found that IBM's stock price is strongly influenced by investments, gross profit, and liabilities. We also examined sector performance, the correlation between stock prices and foreign exchange rates, and the role of financial indicators in forecasting stock price trends.</p>
     </div>
-    <img src="stock.png" alt="NYSE Logo" class="project-image" style="width: 200px; height: auto;">
+    <img src="stock.png" alt="Stock Analysis" class="project-image">
   </section>
 
-  <!-- Steps Section -->
+  <!-- Step 1: Research Questions -->
   <section>
-    <h2>Project Steps</h2>
+    <h2>Step 1: Research Questions</h2>
     <div class="text-content">
-      <h3>Step 1: Define Research Questions</h3>
-      <p>We focused on the following key questions:</p>
+      <p>We focused on the following:</p>
       <ul>
         <li>How have US technology stock prices changed over the past two decades?</li>
         <li>How do sub-sectors like e-commerce and telecommunications compare in performance?</li>
         <li>What impact do foreign exchange rates have on stock prices?</li>
-        <li>What financial indicators influence stock prices for a company like IBM?</li>
+        <li>Which financial indicators most heavily influence a stock's prices?</li>
       </ul>
-
-      <h3>Step 2: Data Collection</h3>
-      <p>We utilized the Alpha Vantage API to gather historical data on stock prices, trading volumes, and financial statements. Data was processed into CSV files to work around API request limits.</p>
-
-      <h3>Step 3: Analysis Methodology</h3>
-      <p>We conducted the following analyses:</p>
-      <ul>
-        <li><strong>Trend Analysis:</strong> Examined stock price trends for major companies like Apple, Amazon, and Microsoft.</li>
-        <li><strong>Sector Comparison:</strong> Compared performance across sub-sectors like cloud services and telecommunications.</li>
-        <li><strong>Market Correlation:</strong> Analyzed correlations between foreign exchange rates and stock prices.</li>
-        <li><strong>Regression Analysis:</strong> Assessed IBM's financial indicators to identify key stock price drivers.</li>
-      </ul>
-
-      <h3>Step 4: Key Findings</h3>
-      <p>We observed a general upward trend in tech stock prices, with notable dips during global events like the 2008 financial crisis and the COVID-19 pandemic. Factors such as gross profit, investments, and changes in operating assets positively influenced IBM's stock price, while liabilities and excess inventory had negative effects.</p>
     </div>
   </section>
 
+  <!-- Step 2: Data Collection -->
+  <section>
+    <h2>Step 2: Data Collection</h2>
+    <div class="text-content">
+      <p>We leveraged the Alpha Vantage API to fetch stock price histories, trading volumes, and financial statements. Due to API rate limits, we aggregated data into CSV files for analysis.</p>
+      <div class="code-block">
+        <code>
+import requests
+import pandas as pd
+
+# Fetch income statement data for IBM
+url = "https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=IBM&apikey=YOUR_API_KEY"
+response = requests.get(url)
+data = response.json()
+
+# Parse the annual reports into a DataFrame
+annual_reports = data["annualReports"]
+df = pd.DataFrame.from_dict(annual_reports)
+
+# Save to CSV for later analysis
+df.to_csv("ibm_income_statement.csv", index=False)
+print("Data fetched and saved!")
+        </code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 3: Analysis Methodology -->
+  <section>
+    <h2>Step 3: Analysis Methodology</h2>
+    <div class="text-content">
+      <p>Breakdown of Analysis</p>
+      <ul>
+        <li><strong>Trends in Stock Prices:</strong> Examined price movements for major tech companies over two decades.</li>
+        <li><strong>Sub-sector Performance:</strong> Compared e-commerce, cloud services, and telecommunications.</li>
+        <li><strong>Currency Correlation:</strong> Analyzed foreign exchange rates (USD/EUR, USD/CNY) and their influence.</li>
+        <li><strong>Regression Analysis:</strong> Investigated IBM’s financial indicators as predictors of its stock prices.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Step 4: Results and Findings -->
+  <section>
+    <h2>Step 4: Results and Findings</h2>
+    <div class="text-content">
+      <h3>1. Stock Price Trends</h3>
+      <p>We visualized historical stock prices of major tech companies to identify patterns and major events impacting the market.</p>
+      <div class="code-block">
+        <code>
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("tech_stock_prices.csv")  # Pre-collected data of stock prices
+df['Date'] = pd.to_datetime(df['Date'])
+df.set_index('Date', inplace=True)
+
+# Plot stock prices
+plt.figure(figsize=(10, 6))
+for company in ['Apple', 'Amazon', 'Microsoft', 'Google', 'Meta']:
+    plt.plot(df.index, df[company], label=company)
+
+plt.title("Stock Price Trends (2000-2024)")
+plt.xlabel("Year")
+plt.ylabel("Stock Price (USD)")
+plt.legend()
+plt.show()
+        </code>
+      </div>
+      <img src="stockvalue.jpg" alt="Stock Analysis" class="project-image">
+      <p>Explanation: Over time, stocks generally increased, with key moments of market corrections such as the 2008 financial crisis and 2014 stock splits by Apple and Google. The COVID-19 pandemic caused a temporary dip, but tech stocks rebounded quickly, and Amazon and Google experienced a significant dip in 2022 due to their 20-1 stock splits.</p>
+
+      <h3>2. Sub-sector Performance</h3>
+      <p>We compared the performance of e-commerce, cloud services, and telecommunications sub-sectors using aggregated sector data.</p>
+      <div class="code-block">
+        <code>
+import seaborn as sns
+
+# Pre-collected sub-sector data
+sub_sector_df = pd.read_csv("sub_sector_performance.csv")
+
+# Create a bar plot
+plt.figure(figsize=(10, 6))
+sns.barplot(data=sub_sector_df, x="Sub-sector", y="Average Growth (%)", palette="viridis")
+plt.title("Average Growth by Sub-sector (2000-2024)")
+plt.xlabel("Sub-sector")
+plt.ylabel("Average Growth (%)")
+plt.show()
+        </code>
+      </div>
+      <img src="stocksector.jpg" alt="Stock Analysis" class="project-image">
+      <p>Explanation: The analysis of stock performance in various technology sub-sectors reveals that factors like technological advancements and broader economic trends influence market outcomes. E-commerce companies experienced fluctuations, cloud computing firms thrived, while traditional telecom stocks faced challenges, with events like the smartphone boom and the 2020 pandemic significantly impacting sector performance.</p>
+
+      <h3>3. Correlation with Currency Trends</h3>
+      <p>Analyzed how foreign exchange rates influence US stock prices.</p>
+      <div class="code-block">
+        <code>
+import numpy as np
+
+# Calculate correlation matrix
+fx_data = pd.read_csv("fx_rates.csv")
+correlation_matrix = fx_data.corr()
+
+# Plot correlation heatmap
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm")
+plt.title("Correlation Between Stock Prices and Currency Exchange Rates")
+plt.show()
+        </code>
+      </div>
+      <img src="forex.jpg" alt="Stock Analysis" class="project-image">
+      <p>Explanation: The line plot between the S&P 500 and foreign exchange rates (USD/EUR, USD/CNY) reveals a positive correlation before the 2008 crisis, indicating US growth but with Europe outperforming. Post-crisis, the S&P 500 increased steadily, while USD/EUR and USD/CNY showed an inverse relationship, suggesting the US market was performing better than Europe and China, though foreign exchange rates seem to reflect global economic conditions rather than directly impacting the US stock market.</p>
+
+      <h3>4. Regression Analysis</h3>
+      <p>Applied Ridge Regression to assess the impact of financial indicators on IBM’s stock prices.</p>
+      <div class="code-block">
+        <code>
+from sklearn.linear_model import RidgeCV
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+
+# Load preprocessed financial data
+df_financials = pd.read_csv("ibm_financials.csv")
+
+# Split into training and test sets
+X = df_financials.drop(columns=["stockPrice"])
+y = df_financials["stockPrice"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Standardize features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Perform Ridge Regression with Cross-Validation
+ridge_cv = RidgeCV(alphas=np.logspace(-4, 4, 13), cv=5)
+ridge_cv.fit(X_train_scaled, y_train)
+
+# Plot MSE vs Alpha
+plt.figure(figsize=(10, 6))
+plt.plot(ridge_cv.alphas, ridge_cv.cv_values_.mean(axis=0), label='MSE vs Alpha')
+plt.xscale('log')
+plt.xlabel('Alpha')
+plt.ylabel('Mean Squared Error')
+plt.title('Ridge Regression: MSE vs Alpha')
+plt.show()
+        </code>
+      </div>
+      <img src="regression.jpg" alt="Stock Analysis" class="project-image"><br>
+      <p>First, we start by examining the correlation heatmap to understand how the different financial factors are related to each other. We can see from the heatmap which factors are strongly correlated with stock price, such as gross profit and total current liabilities, while others, like inventory changes and short-term debt, show weaker correlations.</p>
+      <img src="msealpha.jpg" alt="Stock Analysis" class="project-image"><br>
+      <p>Next, we address any collinearity issues before tuning the ridge regression model using the MSE vs. Alpha plot, which helps us find the optimal alpha value to balance model fit and avoid overfitting.</p>
+      <img src="topcoefficients.jpg" alt="Stock Analysis" class="project-image">
+      <img src="bottomcoefficients.jpg" alt="Stock Analysis" class="project-image">
+      <p>Finally, after optimizing the model, we are more confident that factors like investments, gross profit, and current liabilities are strong predictors of stock price, while operating liabilities and inventory changes have a negative impact.</p>
+    </div>
+  </section>
+  <br>
   <div class="container">
     <a href="../index.html" class="back-home-btn">
       <button>Back to Homepage</button>
     </a>
   </div>
-
+  <br>
   <!-- Footer -->
   <footer>
     <div class="container">
