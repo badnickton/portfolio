@@ -3,69 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U.S. DRG Analysis - Nicholas Chiu</title>
+    <title>U.S. Hospital DRG Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
+        /* Base Styling */
         body {
-            background-color: #f8f9fa;
-            color: #343a40;
-            font-family: Arial, sans-serif;
+          font-family: 'Poppins', sans-serif;
+          margin: 0;
+          padding: 0;
+          background: url('background.jpg') no-repeat center center fixed;
+          background-size: cover;
+          color: #e0e0e0;
+          text-align: center;
         }
+    
         header {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 1.5rem 0;
+          background-color: rgba(0, 0, 0, 0.6);
+          padding: 3em 0;
+          color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
+    
         header h1 {
-            text-align: center;
-            margin: 0;
+          font-size: 3em;
+          margin: 0;
+          letter-spacing: 2px;
         }
-        main {
-            padding: 2rem;
+    
+        header p {
+          font-size: 1.5em;
+          margin-top: 0.5em;
+          font-weight: 300;
         }
-        .tableau-container {
-            text-align: center;
-            margin-top: 2rem;
+    
+        h2, h3 {
+          font-size: 2em;
+          margin-top: 40px;
+          font-weight: 600;
+          text-transform: uppercase;
         }
+    
+        h3 {
+          font-size: 1.5em;
+          margin-top: 20px;
+          font-weight: bold;
+          text-align: left;
+          padding-left: 15px;
+        }
+    
+        .text-content {
+          width: 65%;
+          margin: 0 auto;
+          text-align: left;
+        }
+    
+        .code-block {
+          background-color: #2e2e2e;
+          color: #e0e0e0;
+          padding: 15px;
+          border-radius: 8px;
+          overflow-x: auto;
+          white-space: pre-wrap;
+          font-family: 'Courier New', Courier, monospace;
+          margin-bottom: 20px;
+        }
+    
+        .project-image {
+          max-width: 480px;
+          height: auto;
+          margin: 20px 0;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
         footer {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: #fff;
+          padding: 1.5em 0;
+          font-size: 1.1em;
+          text-align: center;
         }
-    </style>
+    
+        footer a {
+          color: #fff;
+          font-weight: bold;
+          transition: color 0.3s ease;
+        }
+    
+        footer a:hover {
+          color: #0077cc;
+        }
+        /* Styled Button */
+        .back-home-btn button {
+          background-color: #1c1c1c; /* Dark background */
+          color: #e0e0e0; /* Light text */
+          border: 2px solid #e0e0e0; /* Light border */
+          border-radius: 8px; /* Rounded edges */
+          padding: 10px 20px; /* Padding for size */
+          font-family: 'Poppins', sans-serif; /* Font */
+          font-size: 1em; /* Readable size */
+          cursor: pointer; /* Pointer cursor */
+          transition: background-color 0.3s ease, color 0.3s ease;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+    
+        .back-home-btn button:hover {
+          background-color: #e0e0e0; /* Light background */
+          color: #1c1c1c; /* Dark text */
+        }
+        a {
+            color: #66b3ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #99ccff; /* Even lighter blue for hover effect */
+            text-decoration: underline;
+        }
+        
+      </style>
 </head>
 <body>
     <header>
-        <h1>U.S. DRG Analysis</h1>
+        <h1>U.S. Hospital DRG Dashboard</h1>
         <p class="text-center">By Nicholas Chiu</p>
     </header>
     <main>
         <div class="container">
             <section>
                 <h2 class="text-center">Overview</h2>
-                <p>This visualization explores Diagnosis-Related Group (DRG) hospitalizations across the United States. Analyze regional and hospital-level data using the interactive Tableau dashboard below.</p>
+                <br>
+                <p>This <a href="https://public.tableau.com/app/profile/nicholas.chiu/viz/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals#1">Tableau Dashboard</a> explores Diagnosis-Related Group (DRG) hospitalizations from 2011-2015 across the United States. </p>
+                <br>
             </section>
             <div class="tableau-container">
-                <div class="tableauPlaceholder" style="width: 100%; height: 700px;">
+                <div class='tableauPlaceholder' id='viz1735285308390' style='position: relative; width: 80%; height: 500px;'>
                     <noscript>
-                        <a href="https://public.tableau.com/app/profile/nicholas.chiu/viz/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals#1">
+                        <a href='https://public.tableau.com/app/profile/nicholas.chiu/viz/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals#1'>
                             View the visualization on Tableau Public.
                         </a>
                     </noscript>
-                    <object class="tableauViz" style="display: none;" 
-                            width="100%" 
-                            height="700" 
-                            data-src="https://public.tableau.com/views/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals?%3Aembed=true&%3AshowVizHome=no">
+                    <object class='tableauViz' style='display: none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals' />
+                        <param name='tabs' value='yes' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/U/U_SDRGAnalysis-NicholasChiu/BaseMapAllHospitals/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
                     </object>
                 </div>
-                <script type="text/javascript" 
-                        src="https://public.tableau.com/javascripts/api/tableau-2.min.js">
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1735285308390');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='100%';
+                    vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
                 </script>
             </div>
         </div>
     </main>
+    <br>
+    <div class="container">
+      <a href="../index.html" class="back-home-btn">
+        <button>Back to Homepage</button>
+      </a>
+    </div>
+    <br>
     <footer>
         <p>&copy; 2024 Nicholas Chiu. All rights reserved.</p>
     </footer>
