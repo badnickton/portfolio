@@ -65,14 +65,14 @@
     }
 
     a {
-      color: #66b3ff; /* Lighter blue for normal links */
+      color: #66b3ff;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #99ccff; /* Even lighter blue for hover effect */
+      color: #99ccff;
       text-decoration: underline;
     }
 
@@ -119,7 +119,6 @@
       text-align: left;
     }
 
-    /* Grid layout for the projects container */
     .projects-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -149,7 +148,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Responsive Design */
     @media (max-width: 1024px) {
       header h1 {
         font-size: 2.5em;
@@ -174,18 +172,18 @@
 
     @media (max-width: 768px) {
       .projects-container {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr;
         gap: 30px;
       }
 
       .project-details {
-        flex-direction: column; /* Stack image and text */
-        text-align: center; /* Center-align content */
+        flex-direction: column;
+        text-align: center;
         padding-left: 0;
       }
 
       .project-image {
-        margin: 0 auto; /* Center image */
+        margin: 0 auto;
       }
 
       .text-content {
@@ -194,7 +192,7 @@
       }
 
       h3 {
-        text-align: center; /* Center project title */
+        text-align: center;
       }
     }
 
@@ -208,7 +206,7 @@
       }
 
       .profile-image {
-        max-width: 150px; /* Reduce profile image size */
+        max-width: 150px;
       }
 
       h2 {
@@ -225,7 +223,7 @@
 
       footer {
         font-size: 0.9em;
-        line-height: 1.5em; /* Add more spacing for better readability */
+        line-height: 1.5em;
       }
 
       footer p {
@@ -234,6 +232,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -249,16 +248,16 @@
   <!-- About Section -->
   <h2>About Me</h2>
   <div class="text-content">
-    <p>Hi, I'm Nicholas (Nick) Chiu. I'm a 4th year Informatics Major at the University of Washington concentrating in Data Science. I am really interested in using data and analytics in various business contexts, as I am also minoring in Business Administration. I plan on going in to consulting and hope to combine both my technical skills with data science and business acumen.  </p>
+    <p>Hi, I'm Nicholas (Nick) Chiu. I'm a 4th year Informatics Major at the University of Washington concentrating in Data Science. I am really interested in using data and analytics in various business contexts, as I am also minoring in Business Administration. I plan on going in to consulting and hope to combine both my technical skills with data science and business acumen.</p>
     <h4>Here is my <a href="https://docs.google.com/document/d/1MBVJiKuTIKTcKQtWAkSpewG7rzYx4XoF/edit" target="_blank">Resume</a> and <a href="https://www.linkedin.com/in/nicholas-chiu-7320a9206/" target="_blank">LinkedIn Profile</a>.</h4>
     <p>Skills: R, Python, SQL, Java, HTML/CSS, Excel, Power BI, Tableau, Data Visualization, Machine Learning</p>
-    <p>Contact: nichiu34@gmail.com  </p>
-    
+    <p>Contact: nichiu34@gmail.com</p>
   </div>
 
   <!-- Projects Section -->
   <h2>My Projects</h2>
   <div class="projects-container">
+
     <div class="project-wrapper">
       <h3>Financial Data Analytics (Python):<br> US Stock Market Insights</h3>
       <div class="project-details">
@@ -302,6 +301,68 @@
         </div>
       </div>
     </div>
+
+  </div>
+
+  <!-- Capstone Project Section -->
+  <h2>Capstone Project: RoMap – Relationship Optimization Map</h2>
+
+  <div class="text-content">
+
+    <img src="images/romap-hero.png" alt="RoMap Map View" class="project-image" style="max-width: 420px; display: block; margin: 20px auto;">
+
+    <p><strong>RoMap</strong> is a map-first CRM designed for B2B field sales teams who struggle with traditional CRM tools. Field reps think spatially—planning their day by asking “Where have I been?” and “Who should I visit next?”—yet most CRMs force them into lists and heavy manual data entry. Our research found that <strong>less than 30% of real sales activity gets logged</strong> and <strong>27% of leads are lost due to poor follow-up</strong> (from the uploaded document: “< 30% of real sales activity actually gets logged in CRMs… 27% of leads lost due to poor follow-up.”).</p>
+
+    <p>Our team set out to build a CRM that aligns with how field sales actually works. Instead of treating maps as an add‑on, RoMap makes the map the core workflow. Reps can log visits in seconds, view nearby businesses, and instantly see follow-up needs based on proximity and priority. Managers gain real-time visibility into territory coverage and rep activity—addressing the need for “visibility into rep activity, clear pipeline progress, and territory coverage.”</p>
+
+    <img src="images/romap-pipeline.png" alt="RoMap Pipeline View" class="project-image" style="max-width: 420px; display: block; margin: 20px auto;">
+
+    <h3>Project Goals</h3>
+    <ul>
+      <li>Design a CRM that reduces missed follow-ups and improves sales pipeline clarity.</li>
+      <li>Create a map-first workflow that reflects how field reps naturally plan their day.</li>
+      <li>Validate whether spatial thinking improves adoption and reduces CRM friction.</li>
+      <li>Build a simple, mobile-first interface that minimizes data-entry burden.</li>
+    </ul>
+
+    <h3>Team Process & Actions</h3>
+    <ul>
+      <li>Conducted user interviews with field sales reps and managers to understand workflow pain points.</li>
+      <li>Mapped the end-to-end field sales journey and identified friction points in traditional CRMs.</li>
+      <li>Built a functional prototype including map view, pipeline view, tasks, and team management.</li>
+      <li>Ran usability tests to validate assumptions around spatial workflows and priority vs. proximity.</li>
+      <li>Iterated on design direction—removing gamification after discovering it distorted incentives (“Reps may log low-quality or fake visits”).</li>
+    </ul>
+
+    <h3>My Individual Contributions</h3>
+    <ul>
+      <li>Led the design of the map-first workflow, ensuring reps could log visits in seconds.</li>
+      <li>Created the pipeline and tasks interaction model that balances priority vs. proximity.</li>
+      <li>Synthesized research insights into actionable design decisions for the team.</li>
+      <li>Developed the presentation materials for our MVP review and refined our narrative.</li>
+      <li>Worked on the data structure for accounts, activities, and follow-ups.</li>
+    </ul>
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Field sales is fundamentally spatial—maps must be the primary interface, not an accessory.</li>
+      <li>Feature overload kills adoption; simplicity is a competitive advantage.</li>
+      <li>Follow-up failures are the biggest source of lost revenue, not lack of outreach.</li>
+      <li>Gamification must be designed carefully—bad incentives can harm real sales outcomes.</li>
+      <li>Fast, low-friction data entry is essential for any CRM used in the field.</li>
+    </ul>
+
+    <h3>Next Steps</h3>
+    <ul>
+      <li>Implement voice-enabled activity logging to reduce friction even further.</li>
+      <li>Develop lightweight automation tools for reminders and follow-ups.</li>
+      <li>Expand enriched map data through web scraping.</li>
+      <li>Build an iOS app optimized for field use.</li>
+      <li>Conduct more user testing with real field sales teams.</li>
+    </ul>
+
+    <p><a href="romap/index.html">View Full Capstone Project</a></p>
+
   </div>
 
   <!-- Footer Section -->
@@ -312,5 +373,6 @@
       <p><a href="https://github.com/badnickton">GitHub Profile</a></p>
     </div>
   </footer>
+
 </body>
 </html>
